@@ -1,0 +1,54 @@
+### rock paper and scissors
+import random
+print("Welcome participant to the rock paper scissor!!!")
+while True:
+    pr=0
+    cr=0
+    choice=int(input(print("Emter your choice \n 1:Rock \n 2:paper \n 3:Scissor")))
+    if choice==1:
+        choice ='Rock'
+    elif choice==2:
+        choice='Paper'
+    else:
+        choice='Scissor'
+    print("now it's computer chance:")
+    comp_choice=random.randint(1,3)
+    if comp_choice==1:
+        comp_choice='Rock'
+    elif comp_choice==2:
+        comp_choice='Paper'
+    else:
+        comp_choice='Scissor'
+    print(f"computer choice is{comp_choice}")
+    #wining condition
+    if((choice=='Rock' and comp_choice=='Paper') or (choice=='Paper' and comp_choice=='Rock')):
+        print("Paper win!!!")
+        if choice=='Paper':
+            pr+=1
+        else:
+            cr+=1
+    elif((choice=='Paper' and comp_choice=='Scissor') or (choice=='Scissor' and comp_choice=='Paper')):
+        print("Scissor win!!!")
+        if choice=='Scissor':
+            pr+=1
+        else:
+            cr+=1
+    elif((choice=='Scissor' and comp_choice=='Rock') or (choice=='Rock' and comp_choice=='Scissor')):
+        print("Rock win!!!")
+        if choice=='Rock':
+            pr+=1
+        else:
+            cr+=1
+    else:
+        print('it''s a tie')
+    # result 
+    if(pr<cr):
+        print("You Loose!!!")
+    elif(pr>cr):
+        print("you won!!!")
+    else:
+        print("it's a Tie!!!")
+    ans=input(print("Do you want to play more?(y/n)"))
+    if ans=='n':
+        break
+    
